@@ -9,6 +9,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"],
 				sFirstName + "." + sLastName + "@example.com",
 				oBundle.getText("mailSubject", [sFirstName]),
 				oBundle.getText("mailBody"));
+		},
+
+		formatMapUrl: function(sStreet, sZip, sCity, sCountry) {
+			return "https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=500x300&markers="
+			+ jQuery.sap.encodeURL(sStreet + ", " + sZip +  " " + sCity + ", " + sCountry);
 		}
+
 	});
 });
